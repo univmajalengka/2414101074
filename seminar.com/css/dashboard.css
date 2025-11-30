@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* === Global Reset === */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #031540;
+    line-height: 1.6;
+}
+
+/* === Header === */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all .3s ease;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #031540;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+.logo:hover {
+    color: #00abf0;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: all .3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+/* === Home Section === */
+.home {
+    height: 100vh;
+    background: linear-gradient(-90deg, #031540 65%, #fff 35%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+
+    .home-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px; /* Pastikan width dan height sama untuk lingkaran sempurna */
+    background: #031540;
+    border-radius: 50%; /* Ini membuat div luar menjadi lingkaran */
+    border: 25px solid #fff;
+    outline: 25px solid #031540;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    overflow: hidden; /* Tambahkan ini untuk memastikan gambar tidak keluar dari batas lingkaran */
+    }
+
+    .home-image img {
+    width: 100%; /* Gambar akan mengisi 100% dari lebar parent-nya (.home-image) */
+    height: 100%; /* Gambar akan mengisi 100% dari tinggi parent-nya */
+    object-fit: cover; /* Ini sangat penting! Memastikan gambar memenuhi area tanpa terdistorsi dan memotong bagian yang berlebih */
+    border-radius: 50%; /* Ini yang membuat gambar itu sendiri menjadi lingkaran */
+    transform: translateY(3px); /* Jika Anda ingin tetap ada sedikit efek translate */
+}
+
+/* === Home Content === */
+.home-content {
+    max-width: 600px;
+    color: #fff;
+    text-align: right;
+    animation: fadeIn 1s ease-in-out both;
+}
+
+.home-content h1 {
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 40px;
+    font-weight: 600;
+    color: transparent;
+    -webkit-text-stroke: .5px #fff;
+    background: linear-gradient(90deg, #00abf0, #00abf0);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animateText 4s ease-in-out infinite;
+}
+
+@keyframes animateText {
+    0%, 100% {
+        background-size: 0% 100%;
+    }
+    50% {
+        background-size: 100% 100%;
+    }
+}
+
+.home-content p {
+    font-size: 16px;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+/* === Social Icons === */
+
+/* === Button === */
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: #00abf0;
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 0 12px #00abf0;
+    transition: all .4s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00abf0;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}

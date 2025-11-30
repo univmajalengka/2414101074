@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* === Reset === */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: #636363;
+    color: #031540;
+    line-height: 2;
+    position: relative;
+}
+
+/* === Background Image Transparan === */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0.15;        /* atur transparansi */
+    z-index: -1;          /* biar di belakang semua */
+}
+
+/* === Header === */
+.header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #031540;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.logo:hover {
+    color: #00abf0;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: all .3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+    border-bottom: 2px solid #00abf0;
+    padding-bottom: 3px;
+}
+
+/* === Content Wrapper (Split Background) === */
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin-top: 80px; 
+    background: linear-gradient(90deg, #ffffff2f 50%, #031540 50%);
+}
+
+/* === Left Section (Table) === */
+.table {
+    flex: 1;
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.table thead {
+    background: #031540;
+    color: #fff;
+}
+
+.table thead td {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.table tbody td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: #333;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background: #eaf7fc;
+    transition: 0.3s ease;
+}
+
+/* === Right Section (Title + Text) === */
+.right-section {
+    flex: 1;
+    padding: 60px 5%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    transform: translateX(100px);
+}
+
+.title h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: #00abf0;
+    bottom: 0;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.text {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-align: justify;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column;
+        background: #fff;
+    }
+    .table, .right-section {
+        width: 100%;
+        padding: 40px 7%;
+    }
+    .right-section {
+        background: #031540;
+        border-radius: 20px 20px 0 0;
+    }
+}

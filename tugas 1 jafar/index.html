@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Alam Curug Leles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans text-gray-700 bg-gray-50">
+
+    <nav class="bg-white/95 backdrop-blur-sm shadow-lg fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="flex items-center gap-2 text-2xl font-bold text-emerald-600 hover:text-emerald-700 transition">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    <span>Curug Leles</span>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold uppercase tracking-wide">
+                    <a href="#home" class="hover:text-emerald-600 transition duration-300">Beranda</a>
+                    <a href="#about" class="hover:text-emerald-600 transition duration-300">About</a>
+                    <a href="#obyek" class="hover:text-emerald-600 transition duration-300">Obyek Wisata</a>
+                    <a href="#fasilitas" class="hover:text-emerald-600 transition duration-300">Fasilitas Wisata</a>
+                    <a href="#paket" class="hover:text-emerald-600 transition duration-300">Paket Wisata</a>
+                    <a href="#galeri" class="hover:text-emerald-600 transition duration-300">Galery</a>
+                    
+                    <a href="#pemesanan" class="bg-emerald-600 text-white px-5 py-2 rounded-full hover:bg-emerald-700 hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
+                        Pemesanan
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-emerald-700 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="flex flex-col p-4 space-y-3 font-medium text-gray-700">
+                <a href="#home" class="mobile-link block hover:text-emerald-600 hover:bg-emerald-50 px-3 py-2 rounded">Beranda</a>
+                <a href="#about" class="mobile-link block hover:text-emerald-600 hover:bg-emerald-50 px-3 py-2 rounded">About</a>
+                <a href="#obyek" class="mobile-link block hover:text-emerald-600 hover:bg-emerald-50 px-3 py-2 rounded">Obyek Wisata</a>
+                <a href="#fasilitas" class="mobile-link block hover:text-emerald-600 hover:bg-emerald-50 px-3 py-2 rounded">Fasilitas Wisata</a>
+                <a href="#paket" class="mobile-link block hover:text-emerald-600 hover:bg-emerald-50 px-3 py-2 rounded">Paket Wisata</a>
+                <a href="#galeri" class="mobile-link block hover:text-emerald-600 hover:bg-emerald-50 px-3 py-2 rounded">Galery</a>
+                <a href="#pemesanan" class="mobile-link block bg-emerald-600 text-white text-center px-3 py-2 rounded hover:bg-emerald-700 shadow-md">
+                    Pemesanan
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative w-full h-screen overflow-hidden">
+        <div class="slider-container h-full" id="slider">
+            <div class="slide relative">
+                <img src="img/curug.jpg" alt="Wisata 1" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Keindahan Alam Asri</h1>
+                        <p class="text-xl md:text-2xl font-light drop-shadow-md">Nikmati udara segar Curug Leles</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide relative">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Wisata 2" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Hutan Pinus</h1>
+                        <p class="text-xl md:text-2xl font-light drop-shadow-md">Suasana tenang di tengah pepohonan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide relative">
+                <img src="img/api.jpg" alt="Wisata 3" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Camping Ground</h1>
+                        <p class="text-xl md:text-2xl font-light drop-shadow-md">Pengalaman berkemah tak terlupakan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white p-4 rounded-full text-white hover:text-emerald-800 transition z-10">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white p-4 rounded-full text-white hover:text-emerald-800 transition z-10">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <span class="text-emerald-600 font-semibold tracking-wider uppercase mb-2 block">Selamat Datang</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Tentang Curug Leles</h2>
+            <div class="w-20 h-1 bg-emerald-500 mx-auto mb-8 rounded"></div>
+            <p class="text-lg leading-relaxed text-gray-600 mb-8">
+               Curug Leles merupakan tempat wisata tersembunyi di bawah lereng Gunung Ciremai. Wisata ini berada di Blok Leles, Desa Padaherang, Kecamatan Sindangwangi, Kabupaten Majalengka. Kami menawarkan pengalaman liburan yang menyatukan keindahan alam yang asri, air terjun yang menyegarkan, dan petualangan seru bagi keluarga maupun rombongan perusahaan. Nikmati ketenangan jauh dari hiruk pikuk kota.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="p-8 bg-white border border-gray-100 shadow-lg rounded-xl hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600">
+                        <i class="fa-solid fa-tree text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Alam Asri</h3>
+                    <p class="text-sm text-gray-500">Udara sejuk dan pemandangan hijau yang menenangkan.</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 shadow-lg rounded-xl hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600">
+                        <i class="fa-solid fa-water text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Mata Air</h3>
+                    <p class="text-sm text-gray-500">Sumber air alami yang jernih dan menyegarkan.</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 shadow-lg rounded-xl hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600">
+                        <i class="fa-solid fa-campground text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Rekreasi</h3>
+                    <p class="text-sm text-gray-500">Camping ground dan area bermain keluarga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Jelajahi Lewat Video</h2>
+            <div class="flex justify-center">
+                <div class="w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/LyZMqCmW9-A" title="Buper Leles | Majalengka | Cinematic Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="obyek" class="py-20 bg-white scroll-mt-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Obyek Wisata Alam</h2>
+                <p class="text-gray-500 mt-3">Destinasi favorit di kawasan Curug Leles</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10 items-center mb-20 scroll-mt-24">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hutan Pinus" class="rounded-2xl shadow-xl w-full h-80 object-cover hover:scale-[1.02] transition duration-500">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <span class="text-emerald-600 font-bold text-sm uppercase tracking-wide">Spot Foto & Santai</span>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4 mt-1">Hutan Pinus</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Jajaran pohon pinus yang menjulang tinggi menciptakan suasana sejuk dan teduh. Lokasi ini menjadi favorit pengunjung untuk bersantai, memasang hammock, atau berfoto dengan latar belakang alam yang estetik.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Area Hammock</li>
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Spot Foto Instagramable</li>
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Udara Sejuk</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="flex flex-col md:flex-row-reverse gap-10 items-center">
+                <div class="w-full md:w-1/2">
+                    <img src="img/curug.jpg" alt="Curug Alam" class="rounded-2xl shadow-xl w-full h-80 object-cover hover:scale-[1.02] transition duration-500">
+                </div>
+                <div class="w-full md:w-1/2 text-left md:text-right">
+                    <span class="text-emerald-600 font-bold text-sm uppercase tracking-wide">Wisata Air</span>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4 mt-1">Curug Leles</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Nikmati kesegaran air terjun alami yang bersumber langsung dari mata air pegunungan. Lokasi yang instagramable dan menyegarkan pikiran.</p>
+                    <a href="#galeri" class="text-emerald-600 font-bold hover:underline">Lihat Foto Lainnya &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fasilitas" class="py-20 bg-emerald-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl font-bold mb-12">Fasilitas Lengkap</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <div class="group p-4">
+                    <div class="w-20 h-20 mx-auto bg-emerald-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:text-emerald-900 transition duration-300">
+                        <i class="fa-solid fa-mosque text-4xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Musholla</h4>
+                </div>
+                <div class="group p-4">
+                    <div class="w-20 h-20 mx-auto bg-emerald-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:text-emerald-900 transition duration-300">
+                        <i class="fa-solid fa-utensils text-4xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Restoran</h4>
+                </div>
+                <div class="group p-4">
+                    <div class="w-20 h-20 mx-auto bg-emerald-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:text-emerald-900 transition duration-300">
+                        <i class="fa-solid fa-restroom text-4xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Toilet Bersih</h4>
+                </div>
+                <div class="group p-4">
+                    <div class="w-20 h-20 mx-auto bg-emerald-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:text-emerald-900 transition duration-300">
+                        <i class="fa-solid fa-square-parking text-4xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Parkir Luas</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="paket" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Paket Wisata Pilihan</h2>
+                <p class="text-gray-500 mt-2">Hemat budget liburan dengan paket menarik</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100 flex flex-col">
+                    <div class="relative">
+                        <img src="img/api.jpg" alt="Paket Camping" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow">POPULER</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Camping Ceria</h3>
+                        <div class="text-emerald-600 font-bold text-2xl mb-4">Rp 150.000<span class="text-sm text-gray-400 font-normal">/org</span></div>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Nikmati malam di alam bebas. Termasuk tenda dome, matras, sleeping bag, dan api unggun bersama.</p>
+                        <button onclick="selectPackage('Paket Camping Ceria')" class="w-full block text-center border-2 border-emerald-600 text-emerald-600 py-2 rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition">
+                            Pilih Paket
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100 flex flex-col">
+                    <div class="relative">
+                        <img src="img/curugpt2.jpg" alt="Paket Piknik" class="w-full h-56 object-cover">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Paket Piknik Keluarga</h3>
+                        <div class="text-emerald-600 font-bold text-2xl mb-4">Rp 75.000<span class="text-sm text-gray-400 font-normal">/org</span></div>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Santai bersama keluarga. Termasuk sewa tikar, makan siang (nasi liwet), dan akses semua spot foto.</p>
+                        <button onclick="selectPackage('Paket Piknik Keluarga')" class="w-full block text-center border-2 border-emerald-600 text-emerald-600 py-2 rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition">
+                            Pilih Paket
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100 flex flex-col">
+                    <div class="relative">
+                        <img src="img/corporate.jpg" alt="Paket Gathering" class="w-full h-56 object-cover">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Corporate Gathering</h3>
+                        <div class="text-emerald-600 font-bold text-2xl mb-4">Rp 200.000<span class="text-sm text-gray-400 font-normal">/org</span></div>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Minimal 20 pax. Fasilitas Aula, Sound System, Makan Prasmanan, dan Fun Games Outbound.</p>
+                        <button onclick="selectPackage('Paket Gathering')" class="w-full block text-center border-2 border-emerald-600 text-emerald-600 py-2 rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition">
+                            Pilih Paket
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-emerald-800 mb-12">Galeri Momen</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="overflow-hidden rounded-xl shadow-md h-full relative group">
+                    <img src="img/api.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 cursor-pointer" alt="Galeri">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-500"></div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md h-full relative group md:col-span-2">
+                    <img src="img/curug.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 cursor-pointer" alt="Galeri">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md h-full relative group">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 cursor-pointer" alt="Galeri">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md h-full relative group">
+                    <img src="img/curugpt2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 cursor-pointer" alt="Galeri">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md h-full relative group">
+                    <img src="img/curug leles.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 cursor-pointer" alt="Galeri">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md h-full relative group md:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 cursor-pointer" alt="Galeri">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pemesanan" class="py-24 bg-emerald-50">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl border border-emerald-100">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-emerald-800">Booking Sekarang</h2>
+                    <p class="text-gray-500">Isi data diri Anda, kami akan segera menghubungi.</p>
+                </div>
+                
+                <form onsubmit="handleBooking(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="group">
+                            <label class="block text-gray-700 font-semibold mb-2 ml-1">Nama Lengkap</label>
+                            <input type="text" placeholder="Contoh: Budi Santoso" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition">
+                        </div>
+                        <div class="group">
+                            <label class="block text-gray-700 font-semibold mb-2 ml-1">Nomor WhatsApp</label>
+                            <input type="tel" placeholder="08xxx" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2 ml-1">Pilih Paket Wisata</label>
+                        <div class="relative">
+                            <select id="packageSelect" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent appearance-none bg-white transition">
+                                <option value="">-- Silakan Pilih Paket --</option>
+                                <option value="Paket Camping Ceria">Paket Camping Ceria</option>
+                                <option value="Paket Piknik Keluarga">Paket Piknik Keluarga</option>
+                                <option value="Paket Gathering">Paket Gathering</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2 ml-1">Tanggal Kunjungan</label>
+                            <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition text-gray-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2 ml-1">Jumlah Orang</label>
+                            <input type="number" min="1" placeholder="1" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                        Kirim Pemesanan via WhatsApp <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-emerald-500 mb-2"><i class="fa-solid fa-mountain-sun"></i> Curug Leles</h3>
+                    <p class="text-sm text-gray-400">Wisata Alam Terbaik di Jawa Barat.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition duration-300"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition duration-300"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition duration-300"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 Curug Leles. Developed with <i class="fa-solid fa-heart text-red-500"></i> by You.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

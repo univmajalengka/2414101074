@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* === Global Reset === */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #272626;
+    color: #031540;
+    line-height: 1.6;
+}
+
+/* === Header === */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 10%;
+    background: #031540;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all .3s ease;
+}
+
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    z-index: -1;
+
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+.logo:hover {
+    color: #00abf0;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: all .3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+/* === Section Harga Tiket === */
+.ticket-section {
+    padding: 120px 10% 60px;
+    text-align: center;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: #00abf0;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.ticket-card {
+    background: linear-gradient(145deg, #031540, #062566);
+    border-radius: 20px;
+    padding: 35px 25px;
+    width: 260px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: all .35s ease;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ticket-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.ticket-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+    letter-spacing: .5px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #00d0ff;
+}
+
+/* === Button === */
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(90deg, #00abf0, #0091c7);
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0,171,240,0.6);
+    transition: all .4s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(0,171,240,0.9);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .ticket-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .ticket-card {
+        width: 90%;
+    }
+    .navbar a {
+        margin-left: 20px;
+        font-size: 16px;
+    }
+    .title {
+        font-size: 32px;
+    }
+}
+
+/* === Animasi Global === */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Tambahkan animasi ke title */
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Animasi kartu tiket */
+.ticket-card {
+    background: linear-gradient(145deg, #031540, #062566);
+    border-radius: 20px;
+    padding: 35px 25px;
+    width: 260px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: all .35s ease;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0; /* awalnya tidak terlihat */
+    transform: translateY(40px);
+    animation: fadeInUp 0.9s ease forwards;
+}
+
+/* Biar munculnya bergantian */
+.ticket-card:nth-child(1) { animation-delay: 0.2s; }
+.ticket-card:nth-child(2) { animation-delay: 0.4s; }
+.ticket-card:nth-child(3) { animation-delay: 0.6s; }
+.ticket-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Animasi untuk button */
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(90deg, #00abf0, #0091c7);
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0,171,240,0.6);
+    transition: all .4s ease;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.2s;
+}

@@ -1,0 +1,13 @@
+
+        /* Custom Styles */
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+        }
+        /* Offset scroll agar tertutup navbar fixed */
+        section {
+            scroll-margin-top: 90px;
+        }
